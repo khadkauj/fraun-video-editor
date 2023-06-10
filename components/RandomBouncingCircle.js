@@ -11,6 +11,8 @@ function RandomBouncingCircle() {
         const video = videoRef.current
         const canvas = canvasRef.current
         const ctx = canvas.getContext('2d')
+        canvas.width = video.offsetWidth
+        canvas.height = video.offsetHeight
 
         // Define cirlces
         let cirlces = []
@@ -53,16 +55,17 @@ function RandomBouncingCircle() {
             updateCircles()
             animationFrameId = requestAnimationFrame(animate)
         }
-        canvas.width = video.videoWidth
-        canvas.height = video.videoHeight
+
         animate()
     }
 
     return (
-        <div style={{ position: 'relative' }}>
-            <video ref={videoRef} src="/test.avi" style={{ position: 'absolute' }} autoPlay muted />
-            <canvas ref={canvasRef} style={{ position: 'absolute' }} />
-            <button style={{ position: 'fixed', bottom: '80px' }} onClick={startAnimation}>Start Animation</button>
+        <div style={{ width: '100%', position: 'relative', marginBottom: '30px' }}>
+            <video ref={videoRef} src="/test.avi" style={{ width: 'auto' }} autoPlay muted />
+            <canvas ref={canvasRef} style={{ position: 'absolute', top:'0', left:'0'  }} />
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                <button style={{ marginRight: '20px' }} onClick={startAnimation}>Start Animation</button>
+            </div>
         </div>
     );
 }

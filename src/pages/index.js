@@ -8,11 +8,20 @@ import Col from 'react-bootstrap/Col';
 const Home = () => {
 
   return (
-    <Container>
-      <Row><CircleAndGrid /></Row>
-      <Row><RandomBouncingCircle /></Row>
+    <Container style={{display:'grid', placeItems:'center'}} >
+      <Row>
+        <Col>
+          <CircleAndGrid />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <RandomBouncingCircle />
+        </Col>
+      </Row>
     </Container>
   );
 };
 
 export default Home;
+
