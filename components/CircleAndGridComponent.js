@@ -37,7 +37,7 @@ function CircleAndGrid() {
 
       ctx.beginPath();
       ctx.arc(x, y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'white';
+      ctx.fillStyle = 'red';
       ctx.fill();
     };
 
@@ -71,14 +71,16 @@ function CircleAndGrid() {
   }, []);
 
   return (
-    <div style={{ width: '100%', position: 'relative', marginBottom: '30px' }}>
-      <video ref={videoRef} src="/test.avi" style={{ width: 'auto' }} autoPlay muted />
-      <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0 }} />
+    <div style={{ marginBottom: '30px'}}>
+      <div style={{ width: '100%', position: 'relative' }}>
+        <video className='video' ref={videoRef} src="/test.avi" style={{ width: 'auto' }} autoPlay muted />
+        <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
+      </div>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
         <button onClick={showCircle} style={{ marginRight: '20px' }}>Show Circle</button>
         <button onClick={showGrid}>Show Grid</button>
       </div>
-    </div>
+       </div>
   );
 }
 

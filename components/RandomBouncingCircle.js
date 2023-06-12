@@ -61,7 +61,7 @@ function RandomBouncingCircle() {
 
     return (
         <div style={{ width: '100%', position: 'relative', marginBottom: '30px' }}>
-            <video ref={videoRef} src="/test.avi" style={{ width: 'auto' }} autoPlay muted />
+            <video className='video' ref={videoRef} src="/test.avi" style={{ width: 'auto' }} autoPlay muted />
             <canvas ref={canvasRef} style={{ position: 'absolute', top:'0', left:'0'  }} />
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                 <button style={{ marginRight: '20px' }} onClick={startAnimation}>Start Animation</button>
